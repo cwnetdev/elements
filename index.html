@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elements — a periodic table you can rearrange</title>
+<meta name="description" content="The periodic table, sortable by mass, number, or property, searchable by anything, and offline on your phone.">
+<meta name="theme-color" content="#EDEFE8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Elements">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<div id="app">
+
+  <div id="install">
+    <span>Add Elements to your home screen for offline use.</span>
+    <button class="chip" id="install-go" type="button">Install</button>
+    <button class="icon-btn" id="install-no" type="button" aria-label="Dismiss">✕</button>
+  </div>
+
+  <header>
+    <div class="search">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/>
+      </svg>
+      <input id="q" type="search" autocomplete="off" autocapitalize="off" spellcheck="false"
+             placeholder="Iron, Fe, 26, 55.8, mass&lt;20, en&gt;3, gas…" aria-label="Search elements">
+      <button class="icon-btn" id="clear" type="button" aria-label="Clear search" style="visibility:hidden">✕</button>
+      <button class="icon-btn" id="theme" type="button" aria-label="Change theme" title="Theme: auto">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+          <circle cx="8" cy="8" r="3.4"/><path d="M8 .8v1.8M8 13.4v1.8M.8 8h1.8M13.4 8h1.8M3 3l1.3 1.3M11.7 11.7 13 13M13 3l-1.3 1.3M4.3 11.7 3 13"/>
+        </svg>
+      </button>
+    </div>
+    <div class="tabs" id="tabs" role="tablist" aria-label="Views"></div>
+  </header>
+
+  <div class="controls" id="controls"></div>
+  <div class="drawer" id="drawer"></div>
+
+  <div class="thermo" id="thermo">
+    <label for="temp" style="font-size:12.5px;color:var(--ink-2)">Temp</label>
+    <input id="temp" type="range" min="1" max="6000" step="1" value="298">
+    <output id="tempOut" for="temp">298 K</output>
+    <button class="chip" type="button" data-temp="77">77</button>
+    <button class="chip" type="button" data-temp="298">298</button>
+    <button class="chip" type="button" data-temp="1000">1000</button>
+    <button class="chip" type="button" data-temp="5778">Sun</button>
+  </div>
+
+  <div class="status num" id="status" aria-live="polite"></div>
+  <main id="main"></main>
+</div>
+
+<div id="scrim"></div>
+<aside id="sheet" role="dialog" aria-modal="true" aria-label="Element detail" aria-hidden="true">
+  <div class="grabber"></div>
+  <div class="sheet-body" id="sheet-body"></div>
+</aside>
+
+<script src="./elements.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>

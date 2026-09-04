@@ -1,0 +1,21 @@
+{
+  "name": "Elements — periodic table",
+  "short_name": "Elements",
+  "description": "The periodic table, rearrangeable by mass, number or property, searchable by anything, offline.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#EDEFE8",
+  "theme_color": "#EDEFE8",
+  "categories": ["education", "reference", "productivity"],
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Find by mass", "short_name": "Mass", "url": "./index.html?view=ruler" },
+    { "name": "Bonding partners", "short_name": "Bonds", "url": "./index.html?view=bonds" }
+  ]
+}
